@@ -1,29 +1,12 @@
+import {Link, Routes, Route} from 'react-router-dom'
 import "./App.css";
+import MyStory from './MyStory';
+import Header from './Header';
 
-function App() {
+function HomePage() {
   return (
     <div className="site">
-      <header className="navbar">
-        <div className="logo">
-          <img
-            src="/images/amts-logo.png"
-            alt="AMTS Properties"
-            className="logo-image"
-          />
-        </div>
-
-        <nav className="nav-links">
-          <a href="/">Home</a>
-          <a href="#buy">Buy</a>
-          <a href="#sell">Sell</a>
-          <a href="#my-story">My Story</a>
-          <a href="#experience">The Experience</a>
-          <a href="#areas">Featured Areas</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
-
+      <Header />
       <section className="hero">
         <div className="hero-overlay">
           <div className="hero-content">
@@ -131,14 +114,14 @@ function App() {
         <h2>Serving the South Sound</h2>
 
         <div className="area-grid">
-          <span>Puyallup</span>
-          <span>Bonney Lake</span>
-          <span>Sumner</span>
-          <span>Lake Tapps</span>
-          <span>Tacoma</span>
-          <span>Graham</span>
-          <span>Yelm</span>
-          <span>Spanaway</span>
+          <span className="area-item-1">Puyallup</span>
+          <span className="area-item">Bonney Lake</span>
+          <span className="area-item">Sumner</span>
+          <span className="area-item">Lake Tapps</span>
+          <span className="area-item">Tacoma</span>
+          <span className="area-item">Graham</span>
+          <span className="area-item">Yelm</span>
+          <span className="area-item">Spanaway</span>
         </div>
       </section>
 
@@ -166,4 +149,11 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/my-story" element={<MyStory />} />
+    </Routes>
+  );
+}

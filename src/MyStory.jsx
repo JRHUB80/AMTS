@@ -1,8 +1,13 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./MyStory.css";
+import Header from './Header';
 
 function MyStory() {
   return (
+    <>
+    <Header />
     <section className="about-section" id="my-story">
+      
       <div className="about-image">
         <img src="/images/jackie-rath.jpg" alt="Jackie Rath" />
       </div>
@@ -31,6 +36,7 @@ function MyStory() {
         </p>
       </div>
     </section>
+    </>
   );
 }
 
